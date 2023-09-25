@@ -1,0 +1,3 @@
+The listener seems to prefer, on average, more upbeat songs.
+
+Considering that this "aura" was calculated by ones own judgment, a better way to determine it would be to create some sort of algorithm that could make a better judgment.

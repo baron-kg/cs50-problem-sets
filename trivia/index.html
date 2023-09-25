@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section" id="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>What was te capital city of Yugoslavia?</h3>
+
+                <button type="button" id="btn-belgrade"> Belgrade </button>
+                <button type="button" id="btn-sarajevo"> Sarajevo </button>
+                <button type="button" id="btn-skoplje"> Skoplje </button>
+                <button type="button" id="btn-zagreb"> Zagreb </button>
+                <button type="button" id="btn-ljubljana"> Ljubljana </button>
+                <button type="button" id="btn-titograd"> Titograd </button>
+
+                <h3 id="evaluation-1"></h3>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What date was the first conference of the Non-Aligned Movement?</h3>
+
+                <form id="form-id">
+                    <input type="text" id="form-input">
+                    <input type="submit" id="submittedValue" value="Submit Answer">
+                </form>
+
+                <h3 id="evaluation-2"></h3>
+            </div>
+        </div>
+        <script>
+            let buttonsSection = document.getElementById("section");
+            buttonsSection.addEventListener("click", function(event) {
+                if (event.target.tagName === "BUTTON") {
+                    if (event.target.id != "btn-belgrade") {
+                    document.getElementById(event.target.id).style.backgroundColor = "red";
+                    document.getElementById("evaluation-1").innerHTML = "Incorrect";
+                    return 0;
+                }
+                document.getElementById("evaluation-1").innerHTML = "Correct!";
+                document.getElementById(event.target.id).style.backgroundColor = "#ACD8BC";
+                }
+            });
+
+            let form = document.getElementById("form-id");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                let submittedValue = document.getElementById("form-input").value;
+
+                if (submittedValue != "1961") {
+                    document.getElementById("form-input").style.backgroundColor = "red";
+                    document.getElementById("evaluation-2").innerHTML = "Incorrect";
+                    return 0;
+                }
+                document.getElementById("form-input").style.backgroundColor = "#ACD8BC";
+                document.getElementById("evaluation-2").innerHTML = "Correct!";
+            })
+        </script>
+    </body>
+</html>

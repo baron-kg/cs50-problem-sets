@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Testing sort1 with 50K sorted numbers gives the lowest running time, and since sort2 uses merge sort and sort3 takes a lot longer to run, bubble sort seems the most likely.
+
+sort2 uses: Merge sort
+
+How do you know?: The running time on sort2 when tested with 50K random numbers is significantly better than when tested with the other sorts.
+
+sort3 uses: Selection sort
+
+How do you know?: By elimination.

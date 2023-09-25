@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h3>Portfolio overview</h3>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Stock name</th>
+                <th scope="col">Number of shares</th>
+                <th scope="col">Stock price</th>
+                <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in userStockData %}
+                <tr>
+                    <td>{{ stock["stock_symbol"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["stock_price"] }}</td>
+                    <td>{{ stock["holding_value"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <b>Cash</b> {{ userCash }}
+    </div>
+    <div>
+        <b>Total</b> {{ grandTotal }}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h3>Portfolio overview</h3>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Num. of shares</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in userHistory %}
+                <tr>
+                    <td>{{ record["transaction_type"] }}</td>
+                    <td>{{ record["stock_name"] }}</td>
+                    <td>{{ record["share_num"] }}</td>
+                    <td>{{ record["transaction_time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+{% endblock %}
